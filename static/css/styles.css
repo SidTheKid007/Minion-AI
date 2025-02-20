@@ -1,0 +1,121 @@
+/* Minion Theme - Fun & Playful */
+body { 
+    background-color: #FFEB3B; /* Minion Yellow */
+    text-align: center;
+    font-family: 'Comic Sans MS', 'Arial', sans-serif; /* Playful Font */
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+h1 {
+    font-size: 3rem;
+    color: #034efc; /* Minion Blue */
+    text-shadow: 3px 3px 0px white, 5px 5px 0px black; /* Minion Effect */
+}
+
+/* Input Box */
+input {
+    width: 90%;
+    color: black;
+    padding: 8px;
+    border: 3px solid #034efc;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-family: 'Comic Sans MS';
+}
+
+/* Button */
+input[type="submit"] {
+    width: 90%;
+    background-color: #034efc; /* Minion Blue */
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #FFEB3B;
+    color: #034efc; /* Minion Yellow */
+}
+
+#submit-button:hover {
+    animation: wiggle 0.3s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+    75% { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Container */
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    margin-top: 50px;
+}
+
+/* Fun Minion Eyes */
+.minion-eyes {
+    width: 100px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.gif-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Space below the white box */
+}
+
+.giphy-embed {
+    transform: scale(0.5);  /* Shrinks GIF to 50% */
+    transform-origin: center; /* Keeps it centered */
+}
+
+#loading-spinner {
+    display: none;  /* Hidden by default */
+    margin: 20px auto;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #034efc;  /* Minion blue! */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#generated-image {
+    width: 90vw;  /* 90% of the viewport width */
+    max-width: 1024px;  /* Prevent it from getting too large */
+    display: block;  /* Center it */
+    margin: 20px auto;  /* Add space above and below */
+    border-radius: 10px;  /* Soften the edges a bit */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);  /* Add a light shadow */
+}
+
+.footer {
+    background-color: #034efc; /* Minion Blue */
+    color: white; /* White text */
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+

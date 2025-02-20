@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minion-AI</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/minion.png') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}?v=13">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSTBGN656W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DSTBGN656W');
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Minion-AI</h1>
+    <form id="minion-form">
+        <div class="lineitem">
+            <input id="word" name="word" type="text" placeholder="Describe a Scene" required>
+        </div>
+        <br>
+        <input type="submit" value="Minionize!">
+    </form>
+    <br>
+    <div id="loading" style="display: none;">Generating your Minion image...</div>
+</div>
+
+<div id="loading-spinner"></div>
+
+<!-- Image container (GIF initially, AI image replaces it) -->
+<div class="gif-container" id="image-container">
+    <iframe src="https://giphy.com/embed/FREyuwdIyYLFlJ8C6b" 
+        width="480" height="302" frameBorder="0" 
+        class="giphy-embed" allowFullScreen>
+    </iframe>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    Made by Sid K
+</div>
+
+<script>
+    document.getElementById("minion-form").addEventListener("submit", async function(event) {
+        event.preventDefault();
+        playSound();
+
+        let word = document.getElementById("word").value;
+        let imageContainer = document.getElementById("image-container");
+        let spinner = document.getElementById("loading-spinner");
+
+        spinner.style.display = "block"; // Show loading text
+        imageContainer.innerHTML = ""; // Clear previous content
+
+        try {
+            let response = await fetch("/generate-image", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ prompt: word })
+            });
+
+            let data = await response.json();
+            if (data.image_url) {
+                let img = document.createElement("img");
+                img.src = data.image_url;
+                img.id = "generated-image";
+                spinner.style.display = "none";
+                imageContainer.appendChild(img);
+            } else {
+                alert("Error: " + data.error);
+                spinner.style.display = "none";
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            spinner.style.display = "none";
+        }
+    });
+
+    function playSound() {
+        var audio = new Audio("{{ url_for('static', filename='sounds/banana2.mp3') }}");
+        audio.play();
+    }
+</script>
+
+</body>
+</html>
