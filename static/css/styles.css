@@ -85,14 +85,13 @@ input[type="submit"]:hover {
 
 .gif-container img {
     width: 100%;
-    max-width: 600px; /* Default size for larger screens */
     height: auto;
     display: block;
     margin: 5px auto;
 }
 
 .giphy-embed {
-    transform: scale(0.5);  /* Shrinks GIF to 50% */
+    transform: scale(0.85);  /* Shrinks GIF to 50% */
     transform-origin: center; /* Keeps it centered */
 }
 
@@ -133,6 +132,15 @@ input[type="submit"]:hover {
     width: 100%;
 }
 
+.giphy-embed {
+    width: 90%; /* Make it 90% of the screen width */
+    max-width: 600px; /* Set a reasonable max width */
+    height: auto; /* Let height adjust automatically */
+    aspect-ratio: 480 / 302; /* Maintain original aspect ratio */
+    display: block; /* Ensure it's centered */
+    margin: 20px auto; /* Add space around it */
+}
+
 @media (max-width: 768px) {
     h1 {
         font-size: 2.5rem;
@@ -143,8 +151,8 @@ input[type="submit"]:hover {
         padding: 16px;
     }
 
-    .gif-container img {
-        max-width: 500px; /* Slightly bigger on mobile */
+    .giphy-embed {
+        max-width: 90vw; /* Increase max width for mobile */
     }
 }
 
