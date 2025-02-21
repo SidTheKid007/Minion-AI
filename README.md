@@ -1,12 +1,7 @@
 <h1 align="center" style="font-weight:bold;font-size:32px;">Minion-AI</h1>
 
 <div align="center">
-	<div class="gif-container" id="image-container">
-    	<iframe src="https://giphy.com/embed/FREyuwdIyYLFlJ8C6b" 
-        	width="480" height="302" frameBorder="0" 
-        	class="giphy-embed" allowFullScreen>
-    	</iframe>
-	</div>
+	<img src="https://i.pinimg.com/736x/df/11/f7/df11f7053426c06d1c6073f88571ac40.jpg" alt="chef" height="400"/>
 	<br>
   	<p id="desc" style="font-style:italic;text-align:center;">This project allows users to create AI Minion memes with ease.
   	</p>
