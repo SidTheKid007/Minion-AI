@@ -16,7 +16,7 @@
 https://www.minion-ai.com - This website contains the final result of the project. 
 
 
-## Libaries Used
+## Tools Used
 ### Framework
 * Flask
 
@@ -24,4 +24,6 @@ https://www.minion-ai.com - This website contains the final result of the projec
 * OpenAI
 
 ### Frontend
-* HTML, CSS, JS
+* HTML
+* CSS
+* JS
