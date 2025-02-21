@@ -85,10 +85,10 @@ input[type="submit"]:hover {
 
 .gif-container img {
     width: 100%;
-    max-width: 400px; /* Default size for larger screens */
+    max-width: 600px; /* Default size for larger screens */
     height: auto;
     display: block;
-    margin: 20px auto;
+    margin: 5px auto;
 }
 
 .giphy-embed {
