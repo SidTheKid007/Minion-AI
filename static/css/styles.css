@@ -10,7 +10,8 @@ body {
 
 /* Header */
 h1 {
-    font-size: 3rem;
+    font-size: 3.2rem; /* Scales better across devices */
+    text-align: center;
     color: #034efc; /* Minion Blue */
     text-shadow: 3px 3px 0px white, 5px 5px 0px black; /* Minion Effect */
 }
@@ -19,10 +20,10 @@ h1 {
 input {
     width: 90%;
     color: black;
-    padding: 8px;
+    padding: 12px;
     border: 3px solid #034efc;
     border-radius: 10px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-family: 'Comic Sans MS';
 }
 
@@ -32,8 +33,17 @@ input[type="submit"] {
     background-color: #034efc; /* Minion Blue */
     color: white;
     border: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     cursor: pointer;
+    padding: 14px;
+}
+
+button {
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 14px;
+    background-color: yellow;
+    border-radius: 10px;
 }
 
 input[type="submit"]:hover {
@@ -55,6 +65,9 @@ input[type="submit"]:hover {
 
 /* Container */
 .container {
+    width: 90%;
+    max-width: 800px; /* Ensures it doesn't get too big on laptops */
+    margin: auto;
     background-color: white;
     padding: 20px;
     border-radius: 20px;
@@ -118,4 +131,18 @@ input[type="submit"]:hover {
     width: 100%;
 }
 
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    input[type="text"], input[type="submit"] {
+        font-size: 1.8rem;
+        padding: 16px;
+    }
+
+    .gif-container img {
+        max-width: 500px; /* Slightly bigger on mobile */
+    }
+}
 
