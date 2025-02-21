@@ -18,7 +18,7 @@ def generate_image():
     if not prompt:
         return jsonify({"error": "No input provided"}), 400
 
-    ai_prompt = "A 3D animated scene in the style of Despicable Me. All humans are replaced with Minions. " + prompt
+    ai_prompt = "A 3D animated scene in the style of Disney. All creatures are replaced with despicable me minions(short yellow creatures with jeans and one eye)." + prompt
 
     try:
         response = openai.images.generate(
