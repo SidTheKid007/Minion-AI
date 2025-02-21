@@ -83,10 +83,12 @@ input[type="submit"]:hover {
     margin-top: 20px;
 }
 
-.gif-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px; /* Space below the white box */
+.gif-container img {
+    width: 100%;
+    max-width: 400px; /* Default size for larger screens */
+    height: auto;
+    display: block;
+    margin: 20px auto;
 }
 
 .giphy-embed {
